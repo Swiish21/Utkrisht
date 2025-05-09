@@ -45,24 +45,27 @@
             <div class="form-group">
               <label for="donation-amount">Donation Amount (USD)</label>
               <select id="donation-amount" class="form-control">
-                <option value="10">$10 - Feed a child for a week</option>
-                <option value="25">$25 - Provide school supplies</option>
-                <option value="50">$50 - Monthly child support</option>
-                <option value="100">$100 - Community training</option>
+                <option value="10">£10 - Feed a child for a week</option>
+                <option value="25">£25 - Provide school supplies</option>
+                <option value="50">£50 - Monthly child support</option>
+                <option value="100">£100 - Community training</option>
                 <option value="custom">Custom Amount</option>
               </select>
+              
             </div>
 
             <div class="form-group d-none" id="custom-amount-group">
-              <label for="custom-amount">Enter Custom Amount</label>
-              <input type="number" id="custom-amount" class="form-control" placeholder="USD" min="1">
+                <label for="custom-amount">Enter Custom Amount (GBP)</label>
+                <input type="number" id="custom-amount" class="form-control" placeholder="GBP" min="1">
             </div>
+              
 
             <div class="payment-options">
-              <p class="mb-2">Choose a payment method:</p>
-              <div id="paypal-button-container" class="mb-3"></div>
-              <button type="button" class="btn btn-custom w-100">Pay with Card</button>
+                <p class="mb-2">Choose a payment method:</p>
+                <button type="button" class="btn btn-success w-100 mb-3" id="paypal-donate-btn">Donate via PayPal</button>
+                <p id="paypal-error" class="text-danger mt-2" style="display: none;"></p>
             </div>
+              
           </form>
         </div>
       </div>
@@ -198,7 +201,44 @@
   
 
   <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AXuSp5uHPSdCfvDvLJBgVtkiDwAGUtPF9PZrM-DwqWrS0gf6fa286wimdGzBdb6Xmb63_XFjuCbSFTnO&currency=GBP"></script>
   <script src="donate.js"></script>
+  <script>
+  const donationSelect = document.getElementById("donation-amount");
+  const customGroup = document.getElementById("custom-amount-group");
+  const customInput = document.getElementById("custom-amount");
+  const paypalBtn = document.getElementById("paypal-donate-btn");
+  const errorText = document.getElementById("paypal-error");
+
+  // Show/hide custom amount input
+  donationSelect.addEventListener("change", () => {
+    if (donationSelect.value === "custom") {
+      customGroup.classList.remove("d-none");
+    } else {
+      customGroup.classList.add("d-none");
+    }
+    errorText.style.display = "none";
+  });
+
+  paypalBtn.addEventListener("click", () => {
+    let amount;
+
+    if (donationSelect.value === "custom") {
+      amount = parseFloat(customInput.value);
+    } else {
+      amount = parseFloat(donationSelect.value);
+    }
+
+    if (isNaN(amount) || amount <= 0) {
+      errorText.textContent = "Please enter a valid donation amount.";
+      errorText.style.display = "block";
+      return;
+    }
+
+    const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=admin@sukhlegacy.org&currency_code=USD&amount=${amount}`;
+    window.open(paypalUrl, "_blank");
+  });
+</script>
+
 </body>
 </html>
