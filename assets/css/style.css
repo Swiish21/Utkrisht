@@ -151,7 +151,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(95, 0, 48, 0.85);
+  background: rgb(95, 0, 48);
 }
 
 #header .logo {
