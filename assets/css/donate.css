@@ -52,6 +52,23 @@ body {
   .donate-impact h3 {
     font-size: 2rem;
   }
+
+  .donation-options label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .donation-options ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .donation-options li {
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
   
   @media (max-width: 768px) {
     .donate-hero-img {
