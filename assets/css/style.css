@@ -458,7 +458,7 @@ h6 {
   font-size: 70px;
   font-weight: 700;
   line-height: 74px;
-  color: #fff;
+  color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -467,7 +467,7 @@ h6 {
 }
 
 #hero h2 {
-  color: #fff;
+  color: #ffbb38;
   margin: 10px 0 0 0;
   font-size: 30px;
 }
@@ -529,6 +529,92 @@ h6 {
     line-height: 24px;
   }
 }
+
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slider::before,
+.hero-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeImages 10s infinite;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slider::before {
+  background-image: url('../img/hero1.jpg'); /* First background */
+  animation-delay: 0s;
+}
+
+.hero-slider::after {
+  background-image: url('../img/hero-bg1.jpg'); /* Second background */
+  animation-delay: 5s;
+}
+
+@keyframes fadeImages {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Overlay */
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Text Styling */
+.hero-slider .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hero Text Animations */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Increased width */
+  max-width: 1200px; /* Prevents it from stretching too far on large screens */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-text-1 {
+  animation: textFade1 10s infinite;
+}
+
+.hero-text-2 {
+  animation: textFade2 10s infinite;
+}
+
+@keyframes textFade1 {
+  0%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes textFade2 {
+  0%, 45% { opacity: 0; }
+  50%, 95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -626,6 +712,14 @@ section {
 
   
 }
+
+/* Disable all hover or interactive behavior on image */
+.no-tilt {
+  pointer-events: none;
+  transform: none !important;
+  transition: none !important;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -760,7 +854,7 @@ section {
 }
 
 .services .icon-box h4 a:hover {
-  color: #00720f;
+  color: #ffbb38;
 }
 
 .services .icon-box p {
