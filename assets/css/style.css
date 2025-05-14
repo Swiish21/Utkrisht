@@ -657,7 +657,7 @@ h6 {
 }
 
 #services1 .icon-box h4 a:hover {
-  color: #4e002b; /* Slightly brighter purple on hover */
+  color: #7e0045; /* Slightly brighter purple on hover */
 }
 
 
@@ -1644,3 +1644,20 @@ section {
   background-color: #4e002b; /* Darker pink on hover */
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping if too many icons */
+    gap: 10px; /* Space between icons */
+  }
+
+  .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+}
+
