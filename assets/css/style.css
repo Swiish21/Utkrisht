@@ -1578,3 +1578,28 @@ section {
   }
 }
 
+/* Social Media Icons Custom Colors */
+.social-icons a {
+  color: #830048; /* Default icon color */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #4e002b; /* Color on hover (e.g., pink) */
+}
+
+/* Send Message Button Custom Style */
+.btn-custom-submit {
+  background-color: #830048;  /* Button background */
+  color: #fff;                /* Button text color */
+  border: none;
+  padding: 10px 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.btn-custom-submit:hover {
+  background-color: #4e002b; /* Darker pink on hover */
+  color: #fff;
+}
