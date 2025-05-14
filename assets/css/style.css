@@ -1,6 +1,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -854,7 +859,8 @@ section {
 }
 
 .services .icon-box h4 a:hover {
-  color: #ffbb38;
+  color: #ffbb38
+  ;
 }
 
 .services .icon-box p {

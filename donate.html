@@ -29,14 +29,14 @@
       <br>
       <br>
       <div class="mt-4">
-        <a href="#donation-form" class="btn btn-success btn-lg mx-2">Donate Now</a>
-        <a href="#volunteer-form" class="btn btn-outline-light btn-lg mx-2">Volunteer</a>
+        <a href="#donation" class="btn btn-success btn-lg mx-2">Donate Now</a>
+        <a href="#volunteer" class="btn btn-outline-light btn-lg mx-2">Volunteer</a>
       </div>
     </div>
   </section>
   
 
-  <section class="container my-5">
+  <section id="donation" class="container my-5">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-8">
         <h2 class="font-weight-bold">Why Your Donation Matters</h2>
@@ -97,7 +97,7 @@
   </section>
 
   <!-- ======= Volunteer Sign Up Section ======= -->
-  <section class="volunteer-section py-5">
+  <section id="volunteer" class="volunteer-section py-5">
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col-lg-8">
@@ -109,48 +109,56 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <form id="volunteer-form">
+          <form action="https://formspree.io/f/xovdpqqk" method="POST">
             <div class="form-group">
               <label for="full-name">Full Name</label>
-              <input type="text" id="full-name" class="form-control" placeholder="Enter your full name" required>
+              <input type="text" id="full-name" name="full-name" class="form-control" placeholder="Enter your full name" required>
             </div>
-
+  
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
             </div>
-
+  
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
             </div>
-
+  
             <div class="form-group">
               <label for="availability">How much time can you dedicate?</label>
-              <select id="availability" class="form-control" required>
+              <select id="availability" name="availability" class="form-control" required>
                 <option value="" disabled selected>Select your availability</option>
                 <option value="1-5 hours/week">1-5 hours/week</option>
                 <option value="5-10 hours/week">5-10 hours/week</option>
                 <option value="10+ hours/week">10+ hours/week</option>
               </select>
             </div>
-
+  
             <div class="form-group">
               <label for="skills">Skills/Experience (optional)</label>
-              <textarea id="skills" class="form-control" rows="3" placeholder="Please share any relevant skills or experience"></textarea>
+              <textarea id="skills" name="skills" class="form-control" rows="3" placeholder="Please share any relevant skills or experience"></textarea>
             </div>
-
+  
             <div class="form-group">
               <label for="interest">Why do you want to volunteer with us?</label>
-              <textarea id="interest" class="form-control" rows="3" placeholder="Tell us why you’re interested in volunteering" required></textarea>
+              <textarea id="interest" name="interest" class="form-control" rows="3" placeholder="Tell us why you’re interested in volunteering" required></textarea>
             </div>
-
+  
+            <!-- Honeypot spam protection -->
+            <input type="text" name="_gotcha" style="display:none">
+  
+            <!-- Redirect on success -->
+            <input type="hidden" name="_next" value="success.html">
+  
             <button type="submit" class="btn btn-custom w-100">Submit</button>
           </form>
         </div>
       </div>
     </div>
-  </section><!-- End Volunteer Sign Up Section -->
+  </section>
+  
+  <!-- End Volunteer Sign Up Section -->
 
   <!-- Footer -->
   <footer class="text-center text-white" style="background-color: #4e002b;">
