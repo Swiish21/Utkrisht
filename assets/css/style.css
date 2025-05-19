@@ -149,14 +149,13 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(95, 0, 48, 0.95);
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 1000;
   padding: 15px 0;
-}
-
-#header.header-scrolled,
-#header.header-inner-pages {
-  background: rgb(95, 0, 48);
 }
 
 #header .logo {
@@ -437,14 +436,14 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background-image: url('../img/hero-bg2.jpg');
   background-size: cover;
   position: relative;
 }
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.39);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -559,12 +558,12 @@ h6 {
 }
 
 .hero-slider::before {
-  background-image: url('../img/hero1.jpg'); /* First background */
+  background-image: url('../img/hero-bg2.jpg'); /* First background */
   animation-delay: 0s;
 }
 
 .hero-slider::after {
-  background-image: url('../img/hero-bg1.jpg'); /* Second background */
+  background-image: url('../img/hero-bg2.jpg'); /* Second background */
   animation-delay: 5s;
 }
 
@@ -624,7 +623,7 @@ h6 {
 
 /* Style for the services section without images */
 #services1 .icon-box {
-  background: #fff;
+  background: #FFFDD0;
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.10);
@@ -640,7 +639,7 @@ h6 {
 #services1 .icon-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
-  background-color: #f9f5ff;
+  background-color: #fffef0;
 }
 
 #services1 .icon-box h4 {
@@ -915,6 +914,30 @@ section {
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
 }
+
+#mission-vision .icon-box {
+  background-color: #FFFDD0; /* Creamy background */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+#mission-vision .icon-box:hover {
+  transform: translateY(-5px);
+}
+
+#mission-vision .icon-box h4 {
+  color: #000000;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+#mission-vision .icon-box p {
+  color: #333;
+  line-height: 1.6;
+}
+
 
 /*--------------------------------------------------------------
 # Cta
@@ -1620,14 +1643,35 @@ section {
 }
 
 /* Social Media Icons Custom Colors */
+/* Default: Vertical for large screens */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 15px;
+}
+
 .social-icons a {
-  color: #830048; /* Default icon color */
+  display: inline-flex;
+  font-size: 1.5rem;
+  color: #830048;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #4e002b; /* Color on hover (e.g., pink) */
+  color: #4e002b;
 }
+
+/* Horizontal layout on small screens */
+@media (max-width: 768px) {
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 
 /* Send Message Button Custom Style */
 .btn-custom-submit {
@@ -1645,19 +1689,31 @@ section {
   color: #fff;
 }
 
-@media (max-width: 768px) {
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows wrapping if too many icons */
-    gap: 10px; /* Space between icons */
-  }
-
-  .social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-  }
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
 }
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #830048; /* Your color */
+}
+
+.section-divider span {
+  padding: 0 15px;
+  font-weight: bold;
+  color: #ffbb38; /* Text color */
+}
+
+.highlight-yellow {
+  color: #ffc451; /* gold/yellow */
+  font-weight: 600;
+}
+
+
+
 
