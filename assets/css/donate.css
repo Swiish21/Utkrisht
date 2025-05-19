@@ -8,6 +8,54 @@ body {
   color: #333;
 }
 
+.donate-hero-img {
+  background: url('../img/hero-bg2.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+#animated-text {
+  max-width: 1500px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.font-weight-bold {
+  font-weight: 700;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+p {
+  font-size: 1.25rem;
+}
+.btn {
+  margin: 10px 5px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+}
+.btn-purple {
+  background-color: #6a1b4d;
+  color: white;
+}
+.btn-outline-light {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+
 .container {
   /* max-width: 70%; */
   padding: 0 15px;
@@ -44,7 +92,7 @@ body {
 }
 
 .btn-custom {
-  background-color: #f15a24;
+  background-color: #6b003b;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -54,7 +102,8 @@ body {
 }
 
 .btn-custom:hover {
-  background-color: #d94c1e;
+  background-color: #6b003bcb;
+  color: white;
 }
 
 .btn-purple {
@@ -66,6 +115,15 @@ body {
 .btn-purple:hover {
   background-color: #6b003b;
   color: white;
+}
+
+.paypal-donate-btn {
+  background-color: #0070ba;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 
@@ -404,4 +462,7 @@ body {
 
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
+}
+.highlight-yellow {
+  color: #ffc451; /* gold/yellow */
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Animated Hero</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .donate-hero-img {
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  #animated-text {
+    max-width: 700px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .font-weight-bold {
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+  .btn {
+    margin: 10px 5px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-purple {
+    background-color: #6a1b4d;
+    color: white;
+  }
+  .btn-outline-light {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+  .btn:hover {
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+<section class="donate-hero-img">
+  <div id="animated-text">
+    <h1 class="font-weight-bold" id="line1"></h1>
+    <p id="line2"></p>
+  </div>
+</section>
+
+<div style="text-align:center; margin-top: 20px;">
+  <button class="btn btn-purple" onclick="location.href='#donation'">Donate Now</button>
+  <button class="btn btn-outline-light" onclick="location.href='#volunteer'">Volunteer</button>
+</div>
+
+<script>
+  const textSets = [
+    {
+      line1: "Small gift. Big impact. Endless love.",
+      line2: "Because every child deserves a full plate, a safe space, and a fair chance to learn and grow."
+    },
+    {
+      line1: "Your Contribution Goes Beyond Charity",
+      line2: "It opens doors to opportunity by helping us feed children, support their education, and build brighter futures so every child has the chance to thrive."
+    }
+  ];
+
+  const line1El = document.getElementById("line1");
+  const line2El = document.getElementById("line2");
+  const animatedText = document.getElementById("animated-text");
+
+  let currentIndex = 0;
+
+  function showText(index) {
+    animatedText.style.opacity = 0;
+    setTimeout(() => {
+      line1El.textContent = textSets[index].line1;
+      line2El.textContent = textSets[index].line2;
+      animatedText.style.opacity = 1;
+    }, 1000);
+  }
+
+  function cycleTexts() {
+    showText(currentIndex);
+    currentIndex = (currentIndex + 1) % textSets.length;
+  }
+
+  cycleTexts();
+  setInterval(cycleTexts, 8000);
+</script>
+
+</body>
+</html>
