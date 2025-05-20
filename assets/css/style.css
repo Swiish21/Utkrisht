@@ -623,7 +623,7 @@ h6 {
 
 /* Style for the services section without images */
 #services1 .icon-box {
-  background: #FFFDD0;
+  background: #fffee6;
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.10);
@@ -916,7 +916,7 @@ section {
 }
 
 #mission-vision .icon-box {
-  background-color: #FFFDD0; /* Creamy background */
+  background-color: #fffee6; /* Creamy background */
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* subtle shadow */
@@ -1642,33 +1642,40 @@ section {
   }
 }
 
-/* Social Media Icons Custom Colors */
+/* Social Media Icons Styling */
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 /* Default: Vertical for large screens */
 .social-icons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding-top: 15px;
+  gap: 25px;
 }
 
-.social-icons a {
-  display: inline-flex;
-  font-size: 1.5rem;
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #830048;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.social-icons a:hover {
+.social-icon:hover {
   color: #4e002b;
+  transform: scale(1.1);
 }
 
 /* Horizontal layout on small screens */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .social-icons {
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 30px;
   }
 }
 

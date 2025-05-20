@@ -127,8 +127,18 @@ p {
 }
 
 
+.impact-number {
+  color: #830048; /* Deep pink or any color you prefer */
+}
+
+.impact-text {
+  color: #333; /* Dark gray or your preferred paragraph color */
+}
+
+
 .donate-impact h3 {
   font-size: 2rem;
+  color: #6b003b;
 }
 
 .donation-options label {
