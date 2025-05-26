@@ -65,11 +65,23 @@
               <div class="donation-options">
                 <label>Donation Options (One-Time, Monthly, Yearly)</label>
                 <ul class="list-group">
-                  <li class="list-group-item">£10 – Feed 2 children for a month</li>
-                  <li class="list-group-item">£25 – Support 1 child for a month</li>
-                  <li class="list-group-item">£50 – Feed 10 children for a month</li>
-                  <li class="list-group-item">£100 – 1 year of school fees for 1 child</li>
-                  <li class="list-group-item">Custom Amount – Your support transforms lives</li>
+                  
+                  <li class="list-group-item">
+                    <a href="javascript:void(0);" onclick="triggerPayPal()" class="donation-link">£10 – Feed 2 children for a month</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="javascript:void(0);" onclick="triggerPayPal()" class="donation-link">£25 – Support 1 child for a month</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="javascript:void(0);" onclick="triggerPayPal()" class="donation-link">£50 – Feed 10 children for a month</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="javascript:void(0);" onclick="triggerPayPal()" class="donation-link">£100 – 1 year of school fees for 1 child</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="javascript:void(0);" onclick="triggerPayPal()" class="donation-link">Custom Amount – Your support transforms lives</a>
+                  </li>
+
                   <p class="text-muted font-size-sm text-center" style="font-size: 0.95rem;">Support includes meals, school fees, medical care, and basic needs</p>
                   
                 </ul>
@@ -258,6 +270,13 @@
       window.open(paypalMonthlyUrl, "_blank");
     });
   </script>
+
+  <script>
+  function triggerPayPal() {
+    document.getElementById('paypal-donate-btn').click();
+  }
+  </script>
+
   
   
 </body>

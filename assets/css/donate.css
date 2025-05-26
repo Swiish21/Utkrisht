@@ -476,3 +476,15 @@ p {
 .highlight-yellow {
   color: #ffc451; /* gold/yellow */
 }
+
+.donation-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.donation-link:hover {
+  color: #830048; /* Optional: adjust to match your theme */
+  text-decoration: underline;
+  cursor: pointer;
+}

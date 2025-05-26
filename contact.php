@@ -16,10 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $name <$email>";
 
     if (mail($to, $subject, $email_content, $headers)) {
-        header("Location: success.html");
+        header("Location: index.html");
         exit;
     } else {
         echo "Sorry, your message could not be sent.";
     }
 }
 ?>
+
