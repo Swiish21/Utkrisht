@@ -562,10 +562,10 @@ h6 {
   animation-delay: 0s;
 }
 
-.hero-slider::after {
-  background-image: url('../img/hero-bg2.jpg'); /* Second background */
+/* .hero-slider::after {
+  background-image: url('../img/hero-bg2.jpg');
   animation-delay: 5s;
-}
+} */
 
 @keyframes fadeImages {
   0%, 45% { opacity: 1; }
