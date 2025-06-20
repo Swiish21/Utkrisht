@@ -438,8 +438,24 @@ h6 {
   height: 100vh;
   background-image: url('../img/hero-bg2.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #hero {
+    height: auto; /* Let content dictate height */
+    padding: 80px 20px; /* Add padding for spacing */
+    background-position: top;
+  }
+}
+
 
 #hero:before {
   content: "";
@@ -561,11 +577,6 @@ h6 {
   background-image: url('../img/hero-bg2.jpg'); /* First background */
   animation-delay: 0s;
 }
-
-/* .hero-slider::after {
-  background-image: url('../img/hero-bg2.jpg');
-  animation-delay: 5s;
-} */
 
 @keyframes fadeImages {
   0%, 45% { opacity: 1; }
